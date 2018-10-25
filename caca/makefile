@@ -1,5 +1,4 @@
 NAME = libft.a
-
 SRC = ft_memset.c\
 	  ft_bzero.c\
 	  ft_memcpy.c\
@@ -14,7 +13,6 @@ SRC = ft_memset.c\
 	  ft_strncpy.c\
 	  ft_strcat.c\
 	  ft_strncat.c\
-	  ft_strlcat.c\
 	  ft_strchr.c\
 	  ft_strrchr.c\
 	  ft_strstr.c\
@@ -24,7 +22,7 @@ SRC = ft_memset.c\
 	  ft_atoi.c\
 	  ft_isalpha.c\
 	  ft_isdigit.c\
-	  ft_isalnum.c\
+	  ft_isalumn.c\
 	  ft_isascii.c\
 	  ft_isprint.c\
 	  ft_toupper.c\
@@ -54,28 +52,21 @@ SRC = ft_memset.c\
 	  ft_putnbr_fd.c\
 	  ft_countword.c\
 	  ft_strsplit.c\
-	  ft_itoa.c\
-	  ft_abs.c\
-	  ft_lstnew.c\
-	  ft_lstdelone.c\
-	  ft_lstdel.c\
-	  ft_lstadd.c\
-	  ft_lstiter.c\
-	  ft_lstmap.c
+	  ft_itoa.c 
 
 SRCO = 	$(SRC:.c=.o)
 
+HEADERS = -I 
 CFLAGS = -Werror -Wextra -Wall -c 
 CC = gcc
 
 all : $(NAME) 
 
 $(NAME): $(SRCO)
-		@ar -rc $(NAME) $(SRCO)
+		ar -rc $(NAME) $(SRCO)
 
 %.o:%.c #priorise cette regle pour la dependance srco plus que la regle implicite  $@nom de la regle  $^ nom de la dependance 
-		@echo "\033[0;32m [OK] \033[0m       \033[0;33m Compiling:\033[0m" $< 
-		@$(CC) $(CFLAGS) -o $@ $^ 
+		$(CC) $(CFLAGS) -o $@ $^ 
 
 clean :
 		@rm -rf $(SRCO)

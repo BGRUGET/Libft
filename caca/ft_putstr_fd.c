@@ -1,21 +1,22 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_putstr_fd.c                                   .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/15 19:50:43 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/15 19:58:30 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (!s)
+		return ;
+	while (*s)
+		ft_putchar_fd(*s++, fd);
 }

@@ -6,12 +6,10 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/13 00:14:42 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
-
-#include "libft.h"
 
 int	ft_isprint(int c)
 {

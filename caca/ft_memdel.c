@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_memdel.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/13 19:32:26 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/14 00:32:56 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_memdel(void **ap)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (ap == NULL)
+		return ;
+	else
+	{
+		free(*ap);
+		*ap = NULL;
+	}
 }

@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_strnew.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/13 19:55:49 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/13 20:07:55 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strnew(size_t size)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	char *str;
+
+	if (!(str = (char *)ft_memalloc(size + 1)))
+		return (NULL);
+	return (str);
 }

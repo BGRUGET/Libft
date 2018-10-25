@@ -1,21 +1,23 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_lstadd.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/23 22:03:59 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/25 13:36:19 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (new)
+	{
+		new->next = *alst;
+		*alst = new;
+	}
 }

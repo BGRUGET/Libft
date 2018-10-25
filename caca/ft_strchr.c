@@ -1,21 +1,32 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_strchr.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/11 23:09:50 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 19:15:33 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strchr(const char *s, int c)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	int i;
+	int len;
+
+	i = 0;
+	len = ft_strlen(s);
+	if (c == '\0')
+		return ((char*)s + len);
+	while (s[i])
+	{
+		if (s[i] == c)
+			return ((char*)s + i);
+		i++;
+	}
+	return (NULL);
 }

@@ -1,21 +1,43 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_strnstr.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/12 17:00:45 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/12 22:09:40 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t	i;
+	size_t	l;
+	size_t	j;
+
+	i = 0;
+	l = 0;
+	if (h[i] == '\0' && n[l] == '\0')
+		return ((char *)h + i);
+	while (h[i])
+	{
+		l = 0;
+		if (h[i] == n[l] || n[l] == '\0')
+		{
+			j = i;
+			while (h[j] == n[l] && n[l] && j < len)
+			{
+				j++;
+				l++;
+			}
+			if (n[l] == '\0')
+				return ((char *)h + i);
+		}
+		i++;
+	}
+	return (NULL);
 }

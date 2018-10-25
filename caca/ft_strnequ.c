@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_strnequ.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/14 00:09:31 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 19:45:11 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+int	ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	if (!s1 || !s2)
+		return (0);
+	return (ft_strncmp(s1, s2, n) == 0 ? 1 : 0);
 }

@@ -1,21 +1,36 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_strlcat.c                                     .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/24 20:36:24 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/25 17:35:40 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	size_t len;
+	size_t lend;
+	size_t lens;
+
+	lend = ft_strlen(dst);
+	lens = ft_strlen(src);
+	len = 0;
+	if (size == 0)
+		return (lens);
+	if (size - 1 < lend)
+		return (lens + size);
+	while (len + lend < size - 1)
+	{
+		dst[len + lend] = src[len];
+		len++;
+	}
+	dst[len + lend] = '\0';
+	return (lend + lens);
 }

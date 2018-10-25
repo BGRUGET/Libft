@@ -6,14 +6,14 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/16 20:36:26 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 23:35:09 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/10/17 00:45:15 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char static	**ft_input_tab(char const *s, char c, char **tab, int nbword)
+char	**ft_input_tab(char const *s, char c, char **tab, int nbword)
 {
 	int i;
 	int len;
@@ -41,7 +41,7 @@ char static	**ft_input_tab(char const *s, char c, char **tab, int nbword)
 	return (tab);
 }
 
-char		**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
 	char	**tab;
 	int		nbword;

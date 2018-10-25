@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                          LE - /            */
 /*                                                              /             */
-/*   ft_isprint.c                                     .::    .:/ .      .::   */
+/*   ft_memalloc.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 00:06:31 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/23 20:17:23 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/13 18:54:55 by begruget     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/16 19:15:53 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+void	*ft_memalloc(size_t size)
 {
-	if (c >= 32 && c <= 126)
-		return (1);
-	return (0);
+	void *memarea;
+
+	if (!(memarea = (void *)malloc(size)))
+		return (NULL);
+	ft_bzero(memarea, size);
+	return (memarea);
 }
