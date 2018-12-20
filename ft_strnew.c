@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_strnew.c                                      .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: themarch <themarch@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 19:55:49 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/13 20:07:55 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/04 11:45:39 by themarch     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/08 14:42:27 by themarch    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,9 +15,10 @@
 
 char	*ft_strnew(size_t size)
 {
-	char *str;
+	char	*new;
 
-	if (!(str = (char *)ft_memalloc(size + 1)))
+	if ((new = (char *)ft_memalloc(size + 1)) == NULL)
 		return (NULL);
-	return (str);
+	ft_bzero(new, size);
+	return (new);
 }

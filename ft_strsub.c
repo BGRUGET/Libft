@@ -6,7 +6,7 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/14 00:23:57 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/17 00:31:27 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/20 02:14:25 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -21,11 +21,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if (start > ft_strlen(s))
+	if (!(str = (char *)malloc(sizeof(char *) * (len + 1))))
 		return (NULL);
-	if (!(str = (char *)ft_memalloc(len + 1)))
-		return (NULL);
-	while (s[start] && i < len)
+	while (i < len)
 		str[i++] = s[start++];
 	str[i] = '\0';
 	return (str);

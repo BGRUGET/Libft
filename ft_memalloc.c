@@ -3,10 +3,10 @@
 /*                                                              /             */
 /*   ft_memalloc.c                                    .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: themarch <themarch@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/13 18:54:55 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/16 19:15:53 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/04 10:48:31 by themarch     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/05 10:39:00 by themarch    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -15,10 +15,10 @@
 
 void	*ft_memalloc(size_t size)
 {
-	void *memarea;
+	void	*to_ret;
 
-	if (!(memarea = (void *)malloc(size)))
+	if ((to_ret = malloc(size)) == NULL)
 		return (NULL);
-	ft_bzero(memarea, size);
-	return (memarea);
+	ft_bzero(to_ret, size);
+	return (to_ret);
 }

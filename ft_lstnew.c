@@ -6,14 +6,14 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/23 19:39:14 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 17:40:45 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/10 21:05:53 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_lstnew(void const *content, size_t content_size)
+t_list	*ft_lstnew(void const *content, int content_size)
 {
 	t_list	*list;
 
@@ -21,13 +21,13 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		return (NULL);
 	if (!(content))
 	{
-		list->content = NULL;
-		list->content_size = 0;
+		list->tmp = NULL;
+		list->fd = content_size;
 	}
 	else
 	{
-		list->content = ft_strdup(content);
-		list->content_size = content_size;
+		list->tmp = ft_strdup(content);
+		list->fd = content_size;
 	}
 	list->next = NULL;
 	return (list);

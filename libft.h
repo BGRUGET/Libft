@@ -6,7 +6,7 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/04 11:37:46 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 20:43:20 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/10 21:05:47 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -20,8 +20,8 @@
 
 typedef struct		s_list
 {
-	void			*content;
-	size_t			content_size;
+	char			*tmp;
+	int				fd;
 	struct s_list	*next;
 }					t_list;
 
@@ -90,6 +90,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstnew(void const *content, int content_size);
 
 #endif

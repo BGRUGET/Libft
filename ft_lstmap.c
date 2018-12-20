@@ -6,7 +6,7 @@
 /*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
 /*   Created: 2018/10/23 22:54:43 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/24 19:18:27 by begruget    ###    #+. /#+    ###.fr     */
+/*   Updated: 2018/12/18 21:46:29 by begruget    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
@@ -19,7 +19,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 
 	if (lst)
 	{
-		new = f(ft_lstnew(lst->content, lst->content_size));
+		new = f(ft_lstnew(lst->tmp, lst->fd));
 		new->next = ft_lstmap(lst->next, (f));
 		return (new);
 	}

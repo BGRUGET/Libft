@@ -3,24 +3,22 @@
 /*                                                              /             */
 /*   ft_bzero.c                                       .::    .:/ .      .::   */
 /*                                                 +:+:+   +:    +:  +:+:+    */
-/*   By: begruget <begruget@student.le-101.fr>      +:+   +:    +:    +:+     */
+/*   By: themarch <themarch@student.le-101.fr>      +:+   +:    +:    +:+     */
 /*                                                 #+#   #+    #+    #+#      */
-/*   Created: 2018/10/04 12:05:30 by begruget     #+#   ##    ##    #+#       */
-/*   Updated: 2018/10/10 18:06:35 by begruget    ###    #+. /#+    ###.fr     */
+/*   Created: 2018/10/02 10:03:09 by themarch     #+#   ##    ##    #+#       */
+/*   Updated: 2018/10/11 17:01:52 by themarch    ###    #+. /#+    ###.fr     */
 /*                                                         /                  */
 /*                                                        /                   */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t i;
+	size_t	x;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)s)[i] = (char)'\0';
-		i++;
-	}
+	x = 0;
+	while (x < n)
+		((char *)s)[x++] = 0;
 }
